@@ -1,7 +1,4 @@
 import React from 'react'
-// import "../../assets/css/animate.css";
-// import "../../assets/css/swiper-bundle.min.css";
-// import "../../assets/css/tailwind.css";
 export const Contact = () => {
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
@@ -28,7 +25,7 @@ export const Contact = () => {
                 </h2>
               </div>
               <div className="mb-12 flex flex-wrap justify-between lg:mb-0">
-                <div className="mb-8 flex w-[330px] max-w-full">
+                {/* <div className="mb-8 flex w-[330px] max-w-full">
                   <div className="mr-6 text-[32px] text-primary">
                     <svg
                       width="29"
@@ -54,7 +51,7 @@ export const Contact = () => {
                       401 Broadway, 24th Floor, Orchard Cloud View, London
                     </p>
                   </div>
-                </div>
+                </div> */}
                 <div className="mb-8 flex w-[330px] max-w-full">
                   <div className="mr-6 text-[32px] text-primary">
                     <svg
@@ -75,10 +72,7 @@ export const Contact = () => {
                       How Can We Help?
                     </h5>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      info@yourdomain.com
-                    </p>
-                    <p className="mt-1 text-base text-body-color dark:text-dark-6">
-                      contact@yourdomain.com
+                      info@apiai.com
                     </p>
                   </div>
                 </div>
@@ -123,7 +117,7 @@ export const Contact = () => {
                     className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6"
                   />
                 </div>
-                <div className="mb-[22px]">
+                {/* <div className="mb-[22px]">
                   <label
                     for="phone"
                     className="mb-4 block text-sm text-body-color dark:text-dark-6"
@@ -135,12 +129,12 @@ export const Contact = () => {
                     placeholder="+885 1254 5211 552"
                     className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6"
                   />
-                </div>
+                </div> */}
                 <div className="mb-[30px]">
                   <label
                     for="message"
                     className="mb-4 block text-sm text-body-color dark:text-dark-6"
-                    >Message*</label
+                    >Message</label
                   >
                   <textarea
                     name="message"

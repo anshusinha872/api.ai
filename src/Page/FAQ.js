@@ -1,7 +1,4 @@
-import React from 'react'
-// import "../../assets/css/animate.css";
-// import "../../assets/css/swiper-bundle.min.css";
-// import "../../assets/css/tailwind.css";
+import React from 'react';
 export const FAQ = () => {
   return (
     <section

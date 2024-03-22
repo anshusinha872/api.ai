@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { FaDiscord } from "react-icons/fa";
+import { GoogleLogin } from "react-google-login";
+const clientId =
+  "869508749472-fr6qc1lmht8fpic7bh3cophoe3h83hj0.apps.googleusercontent.com";
 export const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".ud-header");
@@ -36,6 +40,12 @@ export const Navbar = () => {
       setIsDarkMode(true);
     }
   };
+  const onSuccess = (response) => {
+    console.log(response);
+  };
+  const onFailure = (response) => {
+    console.log(response);
+  };
   return (
     <div
       className={`absolute top-0 left-0 z-40 flex items-center w-full bg-transparent ud-header ${
@@ -46,11 +56,15 @@ export const Navbar = () => {
         <div className="relative flex items-center justify-between -mx-4">
           <div className="max-w-full px-4 w-60">
             <a href="index.html" className="block w-full py-5 navbar-logo">
-              {/* <img src={logo1} alt="logo" className="w-full dark:hidden" />
-              <img src={logo} alt="logo" className="hidden w-full dark:block" /> */}
               <img
                 src={require(`../assets/images/logo/${
-                  isDarkMode ? (isSticky?"logo-white":"logo"):(isSticky?"logo":"logo-white")
+                  isDarkMode
+                    ? isSticky
+                      ? "logo-white"
+                      : "logo"
+                    : isSticky
+                    ? "logo"
+                    : "logo-white"
                 }.svg`)}
                 alt="logo"
                 className="header-logo"
@@ -61,6 +75,13 @@ export const Navbar = () => {
             <div>
               <button
                 id="navbarToggler"
+                type="button"
+                aria-label="navbarToggler"
+                onClick={() => {
+                  document
+                    .getElementById("navbarCollapse")
+                    .classList.toggle("hidden");
+                }}
                 className="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
               >
                 <span className="relative my-[6px] block h-[2px] w-[30px] bg-dark dark:bg-white"></span>
@@ -75,7 +96,7 @@ export const Navbar = () => {
                   <li className="relative group">
                     <a
                       href="#home"
-                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6"
+                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6"
                     >
                       Home
                     </a>
@@ -83,7 +104,7 @@ export const Navbar = () => {
                   <li className="relative group">
                     <a
                       href="/#about"
-                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
+                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
                     >
                       About
                     </a>
@@ -91,102 +112,10 @@ export const Navbar = () => {
                   <li className="relative group">
                     <a
                       href="/#pricing"
-                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
+                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
                     >
                       Pricing
                     </a>
-                  </li>
-                  <li className="relative group">
-                    <a
-                      href="/#team"
-                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
-                    >
-                      Team
-                    </a>
-                  </li>
-                  <li className="relative group">
-                    <a
-                      href="/#contact"
-                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                  <li className="relative group">
-                    <a
-                      href="blog-grids.html"
-                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                  <li className="relative submenu-item group">
-                    <a
-                      href="javascript:void(0)"
-                      className="relative flex items-center justify-between py-2 mx-8 text-base font-medium text-primary group-hover:text-primary lg:ml-8 lg:mr-0 lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 xl:ml-10"
-                    >
-                      Pages
-                      <svg
-                        className="ml-2 fill-current"
-                        width="16"
-                        height="20"
-                        viewBox="0 0 16 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M7.99999 14.9C7.84999 14.9 7.72499 14.85 7.59999 14.75L1.84999 9.10005C1.62499 8.87505 1.62499 8.52505 1.84999 8.30005C2.07499 8.07505 2.42499 8.07505 2.64999 8.30005L7.99999 13.525L13.35 8.25005C13.575 8.02505 13.925 8.02505 14.15 8.25005C14.375 8.47505 14.375 8.82505 14.15 9.05005L8.39999 14.7C8.27499 14.825 8.14999 14.9 7.99999 14.9Z" />
-                      </svg>
-                    </a>
-                    <div className="submenu relative left-0 top-full hidden w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full">
-                      <a
-                        href="about.html"
-                        className="block rounded px-4 py-[10px] text-sm text-primary hover:text-primary dark:hover:text-primary"
-                      >
-                        About Page
-                      </a>
-                      <a
-                        href="pricing.html"
-                        className="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                      >
-                        Pricing Page
-                      </a>
-                      <a
-                        href="contact.html"
-                        className="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                      >
-                        Contact Page
-                      </a>
-                      <a
-                        href="blog-grids.html"
-                        className="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                      >
-                        Blog Grid Page
-                      </a>
-                      <a
-                        href="blog-details.html"
-                        className="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                      >
-                        Blog Details Page
-                      </a>
-                      <a
-                        href="signup.html"
-                        className="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                      >
-                        Sign Up Page
-                      </a>
-                      <a
-                        href="signin.html"
-                        className="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                      >
-                        Sign In Page
-                      </a>
-                      <a
-                        href="404.html"
-                        className="block rounded px-4 py-[10px] text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                      >
-                        404 Page
-                      </a>
-                    </div>
                   </li>
                 </ul>
               </nav>
@@ -205,7 +134,7 @@ export const Navbar = () => {
                   className="sr-only"
                   onChange={toggleTheme}
                 />
-                <span className="block text-dark dark:hidden dark:text-white">
+                {/* <span className="block text-dark dark:hidden dark:text-white">
                   <svg
                     className="fill-current"
                     width="24"
@@ -243,20 +172,38 @@ export const Navbar = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </span>
+                </span> */}
               </label>
               <div className="hidden sm:flex">
                 <a
-                  href="signin.html"
-                  className="loginBtn px-[22px] py-2 text-base font-medium text-dark hover:opacity-70 dark:text-white"
+                  href="https://discord.com/invite/hnPSfFRdCS"
+                  target="_blank"
+                  style={{
+                    backgroundColor: "#5865f2" ,
+                    color: "#fff",
+                    borderColor: "#fff",
+                    borderRadius: "0.375rem",
+                    borderWidth: "2px",
+                    padding: "0.5rem 1rem",
+                    fontSize: "1rem",
+                    fontWeight: "500",
+                    lineHeight: "1.5",
+                    letterSpacing: "0.025em",
+                    textAlign: "center",
+                    cursor: "pointer",
+                    marginLeft: "1rem",
+                  }}
+                  className="loginBtn flex items-center px-[22px] py-2 text-base font-medium text-dark hover:opacity-70 dark:text-white"
                 >
-                  Sign In
-                </a>
-                <a
-                  href="signup.html"
-                  className="px-6 py-2 text-base font-medium text-white duration-300 ease-in-out rounded-md signUpBtn bg-primary hover:bg-blue-dark"
-                >
-                  Sign Up
+                  <FaDiscord />
+                  <span
+                    style={{
+                      marginLeft: "0.5rem",
+                    }}
+                    className=""
+                  >
+                    Roast API
+                  </span>
                 </a>
               </div>
             </div>

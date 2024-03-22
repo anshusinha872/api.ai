@@ -1,7 +1,4 @@
 import React from "react";
-// import "../../assets/css/animate.css";
-// import "../../assets/css/swiper-bundle.min.css";
-// import "../../assets/css/tailwind.css";
 export const Feature = () => {
   return (
     <section className="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
@@ -9,16 +6,21 @@ export const Feature = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-12 max-w-[485px] text-center lg:mb-[70px]">
-              <span className="mb-2 block text-lg font-semibold text-primary">
+              <span className="mb-2 block text-4xl font-semibold text-primary">
                 Features
               </span>
-              <h2 className="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
-                Main Features Of Play
-              </h2>
-              <p className="text-base text-body-color dark:text-dark-6">
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+              {/* <h2 className="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                Main Features Of Api.ai
+              </h2> */}
+              <p className="text-base mb-3 text-body-color dark:text-dark-6">
+                {/* API documentation for users, teams, and enterprises with the
+                Swagger open source and professional toolset. Find out how
+                Swagger can help you design and document your APIs at scale. */}
+                Generate stunning API documentation in seconds, not days, with our AI-powered tool. No hand-coding needed!  Empower users, teams, and enterprises to flawlessly document and manage APIs at scale. Unlock the power of AI and see how easy API documentation can be.
               </p>
+              <div className="text-white font-bold">
+                Built by developers for developers
+              </div>
             </div>
           </div>
         </div>
@@ -41,17 +43,11 @@ export const Feature = () => {
                 </svg>
               </div>
               <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                Free and Open-Source
+                Effortless Documentation Creation
               </h4>
               <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                Lorem Ipsum is simply dummy text of the printing and industry.
+                Effortlessly generate beautiful documentation in minutes.
               </p>
-              <a
-                href="javascript:void(0)"
-                className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
-              >
-                Learn More
-              </a>
             </div>
           </div>
           <div className="w-full px-4 md:w-1/2 lg:w-1/4">
@@ -72,17 +68,13 @@ export const Feature = () => {
                 </svg>
               </div>
               <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                Multipurpose Template
+                No annotations required
               </h4>
               <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                Lorem Ipsum is simply dummy text of the printing and industry.
+                It intuitively analyzes your API's structure and behavior,
+                crafting comprehensive documentation straight from your
+                codebase.
               </p>
-              <a
-                href="javascript:void(0)"
-                className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
-              >
-                Learn More
-              </a>
             </div>
           </div>
           <div className="w-full px-4 md:w-1/2 lg:w-1/4">
@@ -135,17 +127,12 @@ export const Feature = () => {
                 </svg>
               </div>
               <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                High-quality Design
+                Continuously refreshed API documentation
               </h4>
               <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                Lorem Ipsum is simply dummy text of the printing and industry.
+                Stop nagging devs about Postman/Swagger docs! API.ai
+                auto-updates & syncs with your code, saving time.
               </p>
-              <a
-                href="javascript:void(0)"
-                className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
-              >
-                Learn More
-              </a>
             </div>
           </div>
           <div className="w-full px-4 md:w-1/2 lg:w-1/4">
@@ -178,17 +165,12 @@ export const Feature = () => {
                 </svg>
               </div>
               <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                All Essential Elements
+                Instant Bulk API Documentation
               </h4>
               <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                Lorem Ipsum is simply dummy text of the printing and industry.
+                Effortlessly generate bulk API documentation with a single
+                click.
               </p>
-              <a
-                href="javascript:void(0)"
-                className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
-              >
-                Learn More
-              </a>
             </div>
           </div>
         </div>
