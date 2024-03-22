@@ -1,4 +1,50 @@
 import React from "react";
+import { GoogleLogin } from "react-google-login";
+import { db } from "../util/firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
+import toast, { Toaster } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+const clientId =
+  "869508749472-fr6qc1lmht8fpic7bh3cophoe3h83hj0.apps.googleusercontent.com";
+const onSuccess = async (res) => {
+  console.log(res);
+  await setDoc(doc(db, "users", uuidv4()), {
+    email: res.profileObj.email,
+    name: res.profileObj.name,
+    image: res.profileObj.imageUrl,
+  });
+  toast.dismiss();
+  toast.success("Your email has been saved!");
+  toast.success("We will notify you when we launch!");
+  var templateParams = {
+    name: res.profileObj.name,
+    recipient: res.profileObj.email, // Assuming res.profileObj.email contains the recipient's email address
+    image: res.profileObj.imageUrl,
+    user_email: res.profileObj.email,
+    reply_to: "",
+  };
+
+  emailjs
+    .send(
+      "service_oexx9dg",
+      "template_ujpbepe",
+      templateParams,
+      "AUMuFH8PLDprKG6cT"
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+};
+const onFailure = (res) => {
+  console.log("Login failed: res:", res);
+  toast.error("Failed to log in!");
+};
 export const Pricing = () => {
   return (
     <section
@@ -22,7 +68,7 @@ export const Pricing = () => {
             </div>
           </div>
         </div>
-        <div className="-mx-4 flex flex-wrap justify-center">
+        <div className="mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14">
               <p className="absolute right-[-50px] top-[60px] inline-block -rotate-90 rounded-bl-md rounded-tl-md bg-primary px-5 py-2 text-base font-medium text-white">
@@ -55,24 +101,22 @@ export const Pricing = () => {
                   <p className="text-base text-body-color dark:text-dark-6">
                     API versioning and management for seamless updates
                   </p>
-
-                  {/* <p className="text-base text-body-color dark:text-dark-6">
-                    Free updates
-                  </p> */}
                 </div>
               </div>
-              <a
-                style={{
-                  backgroundColor: "#FFD600",
-                  color: "#000000",
-                  borderColor: "#FFD600",
-                  fontSize: "1.25rem",
-                }}
-                href="javascript:void(0)"
-                className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition hover:bg-blue-dark"
-              >
-                🚀 Join the waitlist
-              </a>
+              <GoogleLogin
+                  clientId={clientId}
+                  buttonText="🚀 Join the waitlist"
+                  onSuccess={onSuccess}
+                  onFailure={onFailure}
+                  isSignedIn={false}
+                  cookiePolicy={"single_host_origin"}
+                  autoLoad={false}
+                  icon={false}
+                  className="jointhewaitlist"
+                >
+                  🚀 Join the waitlist
+                  {/* <FaDiscord /> */}
+                </GoogleLogin>
             </div>
           </div>
           <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -106,18 +150,20 @@ export const Pricing = () => {
                   </p>
                 </div>
               </div>
-              <a
-                style={{
-                  backgroundColor: "#FFD600",
-                  color: "#000000",
-                  borderColor: "#FFD600",
-                  fontSize: "1.25rem",
-                }}
-                href="javascript:void(0)"
-                className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition hover:bg-blue-dark"
-              >
-                🚀 Join the waitlist
-              </a>
+              <GoogleLogin
+                  clientId={clientId}
+                  buttonText="🚀 Join the waitlist"
+                  onSuccess={onSuccess}
+                  onFailure={onFailure}
+                  isSignedIn={false}
+                  cookiePolicy={"single_host_origin"}
+                  autoLoad={false}
+                  icon={false}
+                  className="jointhewaitlist"
+                >
+                  🚀 Join the waitlist
+                  {/* <FaDiscord /> */}
+                </GoogleLogin>
             </div>
           </div>
           <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -151,18 +197,20 @@ export const Pricing = () => {
                   </p>
                 </div>
               </div>
-              <a
-                style={{
-                  backgroundColor: "#FFD600",
-                  color: "#000000",
-                  borderColor: "#FFD600",
-                  fontSize: "1.25rem",
-                }}
-                href="javascript:void(0)"
-                className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition hover:bg-blue-dark"
-              >
-                🚀 Join the waitlist
-              </a>
+              <GoogleLogin
+                  clientId={clientId}
+                  buttonText="🚀 Join the waitlist"
+                  onSuccess={onSuccess}
+                  onFailure={onFailure}
+                  isSignedIn={false}
+                  cookiePolicy={"single_host_origin"}
+                  autoLoad={false}
+                  icon={false}
+                  className="jointhewaitlist"
+                >
+                  🚀 Join the waitlist
+                  {/* <FaDiscord /> */}
+                </GoogleLogin>
             </div>
           </div>
         </div>

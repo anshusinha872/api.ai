@@ -49,26 +49,6 @@ export const Home = () => {
     toast.dismiss();
     toast.success("Your email has been saved!");
     toast.success("We will notify you when we launch!");
-    // var templateParams = {
-    //   name: res.profileObj.name,
-    //   email: res.profileObj.email,
-    //   image: res.profileObj.imageUrl,
-    // };
-    // emailjs
-    //   .send(
-    //     "service_oexx9dg",
-    //     "template_ujpbepe",
-    //     templateParams,
-    //     "AUMuFH8PLDprKG6cT"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
     var templateParams = {
       name: res.profileObj.name,
       recipient: res.profileObj.email, // Assuming res.profileObj.email contains the recipient's email address
