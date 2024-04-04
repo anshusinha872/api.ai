@@ -45,10 +45,10 @@ const onFailure = (res) => {
   console.log("Login failed: res:", res);
   toast.error("Failed to log in!");
 };
-const handleEarlyBirdSuccess = async (res,plan) => {
+const handleEarlyBirdSuccess = async (res, plan) => {
   console.log(res);
   console.log(plan);
-}
+};
 export const Pricing = () => {
   return (
     <section
@@ -108,23 +108,35 @@ export const Pricing = () => {
                 </div>
               </div>
               <GoogleLogin
-                  clientId={clientId}
-                  buttonText="🚀 Join the waitlist"
-                  onSuccess={onSuccess}
-                  onFailure={onFailure}
-                  isSignedIn={false}
-                  cookiePolicy={"single_host_origin"}
-                  autoLoad={false}
-                  icon={true}
-                  className="jointhewaitlist"
+                clientId={clientId}
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                isSignedIn={false}
+                cookiePolicy={"single_host_origin"}
+                autoLoad={false}
+                icon={false}
+                className="jointhewaitlist"
+                style={{
+                  padding: "0.75rem 1.75rem",
+                }}
+              >
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.25rem",
+                    fontWeight: "bold",
+                  }}
                 >
-                  <span style={{
-                    paddingLeft: "10px",
-                  }}>
-                  Join the waitlist
-                  </span>
-                  {/* <FaDiscord /> */}
-                </GoogleLogin>
+                  <img
+                    src={require("../assets/images/google_logo.webp")}
+                    alt="google"
+                    className="google_icon"
+                  />
+                  <span>Join the waitlist</span>
+                </span>
+              </GoogleLogin>
             </div>
           </div>
           <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -159,23 +171,35 @@ export const Pricing = () => {
                 </div>
               </div>
               <GoogleLogin
-                  clientId={clientId}
-                  buttonText="🚀 Join the waitlist"
-                  onSuccess={onSuccess}
-                  onFailure={onFailure}
-                  isSignedIn={false}
-                  cookiePolicy={"single_host_origin"}
-                  autoLoad={false}
-                  icon={true}
-                  className="jointhewaitlist"
+                clientId={clientId}
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                isSignedIn={false}
+                cookiePolicy={"single_host_origin"}
+                autoLoad={false}
+                icon={false}
+                className="jointhewaitlist"
+                style={{
+                  padding: "0.75rem 1.75rem",
+                }}
+              >
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.25rem",
+                    fontWeight: "bold",
+                  }}
                 >
-                  <span style={{
-                    paddingLeft: "10px",
-                  }}>
-                  Join the waitlist
-                  </span>
-                  {/* <FaDiscord /> */}
-                </GoogleLogin>
+                  <img
+                    src={require("../assets/images/google_logo.webp")}
+                    alt="google"
+                    className="google_icon"
+                  />
+                  <span>Join the waitlist</span>
+                </span>
+              </GoogleLogin>
             </div>
           </div>
           <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -210,23 +234,35 @@ export const Pricing = () => {
                 </div>
               </div>
               <GoogleLogin
-                  clientId={clientId}
-                  buttonText="🚀 Join the waitlist"
-                  onSuccess={onSuccess}
-                  onFailure={onFailure}
-                  isSignedIn={false}
-                  cookiePolicy={"single_host_origin"}
-                  autoLoad={false}
-                  icon={true}
-                  className="jointhewaitlist"
+                clientId={clientId}
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                isSignedIn={false}
+                cookiePolicy={"single_host_origin"}
+                autoLoad={false}
+                icon={false}
+                className="jointhewaitlist"
+                style={{
+                  padding: "0.75rem 1.75rem",
+                }}
+              >
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.25rem",
+                    fontWeight: "bold",
+                  }}
                 >
-                  <span style={{
-                    paddingLeft: "10px",
-                  }}>
-                  Join the waitlist
-                  </span>
-                  {/* <FaDiscord /> */}
-                </GoogleLogin>
+                  <img
+                    src={require("../assets/images/google_logo.webp")}
+                    alt="google"
+                    className="google_icon"
+                  />
+                  <span>Join the waitlist</span>
+                </span>
+              </GoogleLogin>
             </div>
           </div>
         </div>

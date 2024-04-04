@@ -80,23 +80,32 @@ export const About = () => {
                   🚀 Join the waitlist
                 </a> */}
                 <GoogleLogin
-                  clientId={clientId}
-                  buttonText="🚀 Join the waitlist"
-                  onSuccess={onSuccess}
-                  onFailure={onFailure}
-                  isSignedIn={false}
-                  cookiePolicy={"single_host_origin"}
-                  autoLoad={false}
-                  icon={true}
-                  className="jointhewaitlist"
-                >
-                  <span style={{
-                    paddingLeft: "10px",
-                  }}>
-                  Join the waitlist
-                  </span>
-                  {/* <FaDiscord /> */}
-                </GoogleLogin>
+                      clientId={clientId}
+                      onSuccess={onSuccess}
+                      onFailure={onFailure}
+                      isSignedIn={false}
+                      cookiePolicy={"single_host_origin"}
+                      autoLoad={false}
+                      icon={false}
+                      className="jointhewaitlist"
+                      style={{
+                        padding: "0.75rem 1.75rem",
+                      }}
+                    >
+                      <span style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: "1.25rem",
+                        fontWeight: "bold",
+                        
+                      }}>
+                        <img src={require("../assets/images/google_logo.webp")} alt="google" className="google_icon" />
+                        <span>
+                          Join the waitlist
+                        </span>
+                      </span>
+                    </GoogleLogin>
               </div>
             </div>
 

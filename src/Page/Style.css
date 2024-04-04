@@ -2,12 +2,23 @@
     /* background-color: #FFD600 !important;  */
     color: #000000 !important;
     /* border-color: #FFD600 !important; */
-    font-size: 1.25rem !important;
+    /* font-size: 1.25rem !important; */
+    font-family: 'Poppins', sans-serif !important;
     border-radius: 0.5rem !important;
     /* letter-spacing: 0.1rem !important; */
     /* display: flex !important; */
-    flex-direction: row-reverse;
-    padding: 0 1rem;
-    align-items: center;
-    justify-content: center;
+    /* flex-direction: row; */
+    /* padding: 0 1rem; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.jointhewaitlist span{
+    /* margin-right: 0.5rem; */
+   /* padding: 1px !important; */
+}
+.google_icon{
+    width: 30px !important; 
+    height: 30px !important;
+    padding: 0 !important;
+    /* margin-right: 0.5rem; */
 }
