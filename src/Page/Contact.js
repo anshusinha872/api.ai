@@ -72,7 +72,7 @@ export const Contact = () => {
                       How Can We Help?
                     </h5>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      info@apiai.com
+                      info@apicall.ai
                     </p>
                   </div>
                 </div>

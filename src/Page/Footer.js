@@ -24,7 +24,7 @@ export const Footer = () => {
                     target="_blank"
                     className="text-gray-1 ml-2 hover:underline"
                   >
-                    Api.ai Team
+                    ApiCall.ai Team
                   </a>
                 </p>
               </div>

@@ -40,7 +40,7 @@ export const Home = () => {
     // open google login
   };
   const onSuccess = async (res) => {
-    console.log(res);
+    // console.log(res);
     await setDoc(doc(db, "users", uuidv4()), {
       email: res.profileObj.email,
       name: res.profileObj.name,
@@ -56,23 +56,22 @@ export const Home = () => {
       user_email: res.profileObj.email,
       reply_to: "",
     };
-    
-    emailjs
-      .send(
-        "service_oexx9dg",
-        "template_ujpbepe",
-        templateParams,
-        "AUMuFH8PLDprKG6cT"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    
+
+    // emailjs
+    //   .send(
+    //     "service_oexx9dg",
+    //     "template_ujpbepe",
+    //     templateParams,
+    //     "AUMuFH8PLDprKG6cT"
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   );
   };
   const onFailure = (res) => {
     console.log("Login failed: res:", res);
@@ -164,17 +163,19 @@ export const Home = () => {
                     </span> */}
                     <GoogleLogin
                       clientId={clientId}
-                      buttonText="🚀 Join the waitlist"
+                      // buttonText="Join the waitlist"
                       onSuccess={onSuccess}
                       onFailure={onFailure}
                       isSignedIn={false}
                       cookiePolicy={"single_host_origin"}
                       autoLoad={false}
-                      icon={false}
+                      icon={true}
                       className="jointhewaitlist"
+                      
                     >
-                      🚀 Join the waitlist
-                      {/* <FaDiscord /> */}
+                      <span style={{
+                        paddingLeft: "10px",
+                      }}>Join the waitlist</span>
                     </GoogleLogin>
                   </li>
                 </ul>

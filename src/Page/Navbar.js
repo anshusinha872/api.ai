@@ -55,20 +55,48 @@ export const Navbar = () => {
       <div className="container">
         <div className="relative flex items-center justify-between -mx-4">
           <div className="max-w-full px-4 w-60">
-            <a href="index.html" className="block w-full py-5 navbar-logo">
-              <img
+            <a className="block w-full py-5 navbar-logo">
+              {/* <img
                 src={require(`../assets/images/logo/${
                   isDarkMode
                     ? isSticky
-                      ? "logo-white"
-                      : "logo"
+                      ? "apicall.ai"
+                      : "apicall.ai"
                     : isSticky
-                    ? "logo"
-                    : "logo-white"
-                }.svg`)}
+                    ? "apicall.ai"
+                    : "apicall.ai"
+                }.jpeg`)}
                 alt="logo"
                 className="header-logo"
-              />
+              /> */}
+              {/* <span>
+                <span className="font-medium">Apicall</span>
+                <span className="text-primary bg-white p-2">.ai</span>
+              </span> */}
+              <span>
+                <span
+                  className="font-medium"
+                  style={{
+                    fontSize: "2rem",
+                    letterSpacing: "1px",
+                    border: "1px solid #fff",
+                    padding: "0.25rem 0.5rem",
+                    color: "#fff",
+                  }}
+                >
+                  Apicall
+                </span>
+                <span
+                  className="text-primary bg-white p-2"
+                  style={{
+                    fontSize: "2rem",
+                    padding: "0.28rem",
+                    marginLeft: "0px",
+                  }}
+                >
+                  .ai
+                </span>
+              </span>
             </a>
           </div>
           <div className="flex items-center justify-between w-full px-4">
@@ -95,26 +123,34 @@ export const Navbar = () => {
                 <ul className="blcok lg:flex 2xl:ml-20">
                   <li className="relative group">
                     <a
-                      href="#home"
+                      href="/#feature"
                       className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6"
                     >
-                      Home
+                      Feature
                     </a>
                   </li>
-                  <li className="relative group">
+                  {/* <li className="relative group">
                     <a
                       href="/#about"
                       className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
                     >
                       About
                     </a>
-                  </li>
+                  </li> */}
                   <li className="relative group">
                     <a
                       href="/#pricing"
                       className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
                     >
                       Pricing
+                    </a>
+                  </li>
+                  <li className="relative group">
+                    <a
+                      href="/#contact"
+                      className="flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-body-color dark:lg:text-dark-6 xl:ml-10"
+                    >
+                      Contact Us
                     </a>
                   </li>
                 </ul>
@@ -179,7 +215,7 @@ export const Navbar = () => {
                   href="https://discord.com/invite/hnPSfFRdCS"
                   target="_blank"
                   style={{
-                    backgroundColor: "#5865f2" ,
+                    backgroundColor: "#5865f2",
                     color: "#fff",
                     borderColor: "#fff",
                     borderRadius: "0.375rem",

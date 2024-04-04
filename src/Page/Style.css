@@ -1,8 +1,13 @@
 .jointhewaitlist{
-    background-color: #FFD600 !important; 
+    /* background-color: #FFD600 !important;  */
     color: #000000 !important;
-    border-color: #FFD600 !important;
+    /* border-color: #FFD600 !important; */
     font-size: 1.25rem !important;
     border-radius: 0.5rem !important;
-    letter-spacing: 0.1rem !important;
+    /* letter-spacing: 0.1rem !important; */
+    /* display: flex !important; */
+    flex-direction: row-reverse;
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
 }

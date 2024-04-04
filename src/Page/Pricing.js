@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 const clientId =
   "869508749472-fr6qc1lmht8fpic7bh3cophoe3h83hj0.apps.googleusercontent.com";
 const onSuccess = async (res) => {
-  console.log(res);
+  // console.log(res);
   await setDoc(doc(db, "users", uuidv4()), {
     email: res.profileObj.email,
     name: res.profileObj.name,
@@ -25,26 +25,30 @@ const onSuccess = async (res) => {
     reply_to: "",
   };
 
-  emailjs
-    .send(
-      "service_oexx9dg",
-      "template_ujpbepe",
-      templateParams,
-      "AUMuFH8PLDprKG6cT"
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+  // emailjs
+  //   .send(
+  //     "service_oexx9dg",
+  //     "template_ujpbepe",
+  //     templateParams,
+  //     "AUMuFH8PLDprKG6cT"
+  //   )
+  //   .then(
+  //     (result) => {
+  //       console.log(result.text);
+  //     },
+  //     (error) => {
+  //       console.log(error.text);
+  //     }
+  //   );
 };
 const onFailure = (res) => {
   console.log("Login failed: res:", res);
   toast.error("Failed to log in!");
 };
+const handleEarlyBirdSuccess = async (res,plan) => {
+  console.log(res);
+  console.log(plan);
+}
 export const Pricing = () => {
   return (
     <section
@@ -111,10 +115,14 @@ export const Pricing = () => {
                   isSignedIn={false}
                   cookiePolicy={"single_host_origin"}
                   autoLoad={false}
-                  icon={false}
+                  icon={true}
                   className="jointhewaitlist"
                 >
-                  🚀 Join the waitlist
+                  <span style={{
+                    paddingLeft: "10px",
+                  }}>
+                  Join the waitlist
+                  </span>
                   {/* <FaDiscord /> */}
                 </GoogleLogin>
             </div>
@@ -158,10 +166,14 @@ export const Pricing = () => {
                   isSignedIn={false}
                   cookiePolicy={"single_host_origin"}
                   autoLoad={false}
-                  icon={false}
+                  icon={true}
                   className="jointhewaitlist"
                 >
-                  🚀 Join the waitlist
+                  <span style={{
+                    paddingLeft: "10px",
+                  }}>
+                  Join the waitlist
+                  </span>
                   {/* <FaDiscord /> */}
                 </GoogleLogin>
             </div>
@@ -205,10 +217,14 @@ export const Pricing = () => {
                   isSignedIn={false}
                   cookiePolicy={"single_host_origin"}
                   autoLoad={false}
-                  icon={false}
+                  icon={true}
                   className="jointhewaitlist"
                 >
-                  🚀 Join the waitlist
+                  <span style={{
+                    paddingLeft: "10px",
+                  }}>
+                  Join the waitlist
+                  </span>
                   {/* <FaDiscord /> */}
                 </GoogleLogin>
             </div>
